@@ -2,6 +2,14 @@
 
 // Main
 
+#map {
+  height: 550px;
+
+  @include mq(tablet) {
+    height: 600px;
+  }
+}
+
 .location {
   padding: 0;
 }

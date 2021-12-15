@@ -499,3 +499,7 @@ footer p {
 .location-footer .socials a:hover path {
   fill: #ffffff;
 }
+
+#map {
+  height: 550px;
+}
