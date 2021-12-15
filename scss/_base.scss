@@ -1,0 +1,61 @@
+@use "sass:map";
+
+// Convert px to rem
+@function toRem($value) {
+  $remValue: ($value / 16) + rem;
+  @return $remValue;
+}
+
+// Colour variables
+$dark: #151515;
+$grey: #444444;
+$white: #ffffff;
+$light-background: #fcfaf9;
+$color: #d5966c;
+
+// Media Queries
+$breakpoints: (
+  tablet: 700px,
+  desktop: 1150px,
+);
+
+@mixin mq($key) {
+  $size: map.get($breakpoints, $key);
+
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+// CSS Reset
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}

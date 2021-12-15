@@ -1,0 +1,41 @@
+@use "base" as *;
+@use "typography" as *;
+
+// Link
+
+.link {
+  display: flex;
+}
+
+.link-text {
+  @include font-size(20, 24, 800);
+  letter-spacing: 3.63636px;
+  background-color: $dark;
+  color: $white;
+  padding: toRem(24) toRem(35-1.81818) toRem(24) toRem(32-1.81818);
+  transition: 0.3s;
+}
+
+.link-img {
+  background-color: $color;
+  width: toRem(56);
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.3s;
+}
+
+.right {
+  background-image: url(../assets/icon-arrow-right.svg);
+}
+
+.left {
+  background-image: url(../assets/icon-arrow-left.svg);
+}
+
+a:hover .link-text {
+  background-color: $color;
+}
+
+a:hover .link-img {
+  background-color: $dark;
+}

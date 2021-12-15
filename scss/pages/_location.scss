@@ -1,0 +1,83 @@
+@use "../base" as *;
+
+// Main
+
+.location {
+  padding: 0;
+}
+
+.location .link {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include mq(tablet) {
+    left: toRem(39);
+  }
+
+  @include mq(desktop) {
+    left: toRem(156);
+  }
+}
+
+.location-text {
+  background-color: $dark;
+  padding: toRem(48) toRem(16) toRem(56);
+
+  h1,
+  p {
+    color: $white;
+  }
+
+  h2 {
+    padding: toRem(48) 0 toRem(20);
+  }
+
+  p {
+    max-width: toRem(500);
+  }
+
+  p:nth-child(2) {
+    padding-bottom: toRem(20);
+  }
+
+  @include mq(tablet) {
+    display: flex;
+    padding: toRem(88) toRem(40) toRem(80);
+
+    h1 {
+      padding-right: toRem(97);
+    }
+
+    h2 {
+      padding: 0 0 toRem(20);
+    }
+  }
+
+  @include mq(desktop) {
+    padding: toRem(104) toRem(165) toRem(128);
+
+    h1 {
+      padding-right: toRem(325);
+    }
+  }
+}
+
+// Footer
+
+.location-footer {
+  background-color: $color;
+
+  h3,
+  p {
+    color: $dark;
+  }
+
+  path {
+    fill: $dark;
+  }
+
+  .socials a:hover path {
+    fill: $white;
+  }
+}
