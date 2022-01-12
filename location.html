@@ -10,22 +10,24 @@
   <title>Frontend Mentor | Art gallery website</title>
   <link rel="stylesheet" href="./css/style.css" />
 
-  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
 
-  <script src="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
   <script src="./TileLayer.Grayscale.js"></script>
 
   <script>
     function init() {
       var map = L.map("map").setView([41.48135, -71.31035], 15);
 
-      mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-      L.tileLayer
-        .grayscale("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution: "&copy; " + mapLink + " Contributors",
-          maxZoom: 18,
-        })
-        .addTo(map);
+       mapLink = '<a href="https://openstreetmap.org">OpenStreetMap</a>';
+       L.tileLayer.grayscale('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors', maxZoom: 18, fadeAnimation: false,
+        }).addTo(map);
+     
       map.zoomControl.setPosition('topright');
 
       const svgIcon = L.divIcon({

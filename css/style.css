@@ -428,8 +428,21 @@ footer p {
   fill: #d5966c;
 }
 
+#map {
+  height: 550px;
+}
+@media (min-width: 700px) {
+  #map {
+    height: 600px;
+  }
+}
+
 .location {
   padding: 0;
+}
+
+.link {
+  z-index: 450;
 }
 
 .location .link {
@@ -498,8 +511,4 @@ footer p {
 }
 .location-footer .socials a:hover path {
   fill: #ffffff;
-}
-
-#map {
-  height: 550px;
 }
